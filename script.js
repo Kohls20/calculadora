@@ -6,54 +6,32 @@ function alerta() {
     window.alert("Erro! Um dos campos está vazio, por favor digite um número.");
 }
 
-function somar() {
+function calcular(opcao) {
     var n1 = Number(num1.value);
     var n2 = Number(num2.value);
-
-    var res = n1 + n2;
 
     if (num1.value.length == 0 || num2.value.length == 0) {
         alerta();
     } else {
-        resultado.innerHTML = `O resultado é: <br> ${n1} + ${n2} = <strong>${res}</strong>`;
-    }
-}
-
-function subtrair() {
-    var n1 = Number(num1.value);
-    var n2 = Number(num2.value);
-
-    var res = n1 - n2;
-
-    if (num1.value.length == 0 || num2.value.length == 0) {
-        alerta();
-    } else {
-        resultado.innerHTML = `O resultado é: <br> ${n1} - ${n2} = <strong>${res}</strong>`;
-    }
-}
-
-function multi() {
-    var n1 = Number(num1.value);
-    var n2 = Number(num2.value);
-
-    var res = n1 * n2;
-
-    if (num1.value.length == 0 || num2.value.length == 0) {
-        alerta();
-    } else {
-        resultado.innerHTML = `O resultado é: <br> ${n1} x ${n2} = <strong>${res}</strong>`;
-    }
-}
-
-function dividir() {
-    var n1 = Number(num1.value);
-    var n2 = Number(num2.value);
-
-    var res = n1 / n2;
-
-    if (num1.value.length == 0 || num2.value.length == 0) {
-        alerta();
-    } else {
-        resultado.innerHTML = `O resultado é: <br> ${n1} : ${n2} = <strong>${res}</strong>`;
+        switch (opcao) {
+            case 1: //somar
+                var res = n1 + n2;
+                resultado.innerHTML = `O resultado é: <br> ${n1} + ${n2} = <strong>${res}</strong>`;
+                break;
+            case 2: //subtrair
+                var res = n1 - n2;
+                resultado.innerHTML = `O resultado é: <br> ${n1} - ${n2} = <strong>${res}</strong>`;
+                break;
+            case 3: //multiplicar
+                var res = n1 * n2;
+                resultado.innerHTML = `O resultado é: <br> ${n1} x ${n2} = <strong>${res}</strong>`;
+                break;
+            case 4: //dividir
+                var res = n1 / n2;
+                resultado.innerHTML = `O resultado é: <br> ${n1} : ${n2} = <strong>${res}</strong>`;
+                break;
+            default:
+                break;
+        }
     }
 }
